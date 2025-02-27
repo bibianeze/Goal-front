@@ -12,16 +12,7 @@ const OngoingPage = () => {
       const response = await fetch(
         "https://goal-back-1.onrender.com/api/goals/ongoing"
       );
-      if (!response.ok) {
-        const errData = await response.json();
-        throw new Error(`Error: ${errData.error || response.status}`);
-      }
       const data = await response.json();
-      if (!Array.isArray(data)) {
-        console.error("Expected an array but got:", data);
-        setGoals([]);
-        return;
-      }
       setGoals(data);
     } catch (error) {
       console.error("Error fetching ongoing goals:", error);
