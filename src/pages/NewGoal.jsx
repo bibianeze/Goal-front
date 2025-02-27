@@ -14,13 +14,16 @@ const NewGoal = () => {
     const newGoal = { title, description, progress: Number(progress) };
 
     try {
-      const response = await fetch("https://goal-back.onrender.com/api/goals", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newGoal),
-      });
+      const response = await fetch(
+        "https://goal-back-1.onrender.com/api/goals",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newGoal),
+        }
+      );
       if (response.ok) {
         navigate("/allgoals");
       } else {
