@@ -55,8 +55,12 @@ const OngoingPage = () => {
                 </div>
                 <div className="loader-con">
                   <div
-                    className="loader-per"
-                    style={{ width: `${goal.progress}%` }}
+                    className="loader-bar"
+                    style={{
+                      width: `${goal.progress}%`,
+                      backgroundColor:
+                        goal.progress < 50 ? "#ff0000cc" : "#339933",
+                    }}
                   ></div>
                 </div>
               </div>
@@ -68,11 +72,6 @@ const OngoingPage = () => {
                 <button
                   onClick={() => handleDelete(goal._id)}
                   className="deletez"
-                  style={{
-                    border: "none",
-                    background: "none",
-                    cursor: "pointer",
-                  }}
                 >
                   <img src={can} alt="" />
                   <p>Delete</p>

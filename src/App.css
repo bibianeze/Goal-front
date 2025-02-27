@@ -27,6 +27,7 @@
   font-weight: 600;
   font-size: 20px;
   color: #000000;
+  cursor: pointer;
 }
 
 /* =========================== */
@@ -78,6 +79,7 @@
   color: #ffffff;
   font-weight: 600;
   font-size: 20px;
+  cursor: pointer;
 }
 
 /* ==================================== */
@@ -113,6 +115,7 @@
   font-weight: 600;
   font-size: 20px;
   color: #0585cd;
+  cursor: pointer;
 }
 
 .each-ongoing {
@@ -157,6 +160,7 @@
   width: 416.5px;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .update {
@@ -169,6 +173,7 @@
   padding: 16px;
   background-color: #0585cd;
   height: 24px;
+  cursor: pointer;
 }
 
 .update p {
@@ -188,8 +193,8 @@
   border-radius: 10px;
   padding: 16px;
   background-color: #ffffff;
-  height: 24px;
   border: 1px solid #0585cd;
+  cursor: pointer;
 }
 
 .deletez p {
@@ -229,9 +234,7 @@
   border-radius: 10px;
 }
 
-.loader-per {
-  background-color: #ff0000cc;
-  width: 30%;
+.loader-bar {
   height: 12px;
   border-radius: 10px;
 }
@@ -246,17 +249,11 @@
   margin: 0;
 }
 
-.loader-pera {
-  width: 100%;
-  background-color: #339933;
-  height: 12px;
-  border-radius: 10px;
-}
-
 .ongoing-buttonss {
   width: 286.5px;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 /* ========================= */
@@ -313,6 +310,7 @@
   font-size: 20px;
   font-family: "Montserrat", serif;
   color: #ffffff;
+  cursor: pointer;
 }
 
 input::placeholder,
@@ -340,6 +338,7 @@ textarea::placeholder {
   font-size: 20px;
   font-family: "Montserrat", serif;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .new-forms {
@@ -381,13 +380,4 @@ textarea::placeholder {
   font-size: 16px;
   line-height: 19.5px;
   color: #000000;
-}
-
-button.deletez {
-  background: none;
-  border: none;
-  padding: 0;
-  font: inherit;
-  color: inherit;
-  cursor: pointer;
 }

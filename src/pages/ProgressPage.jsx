@@ -76,9 +76,18 @@ const ProgressPage = () => {
             type="number"
             placeholder="Goal Progress"
             value={newProgress}
-            onChange={(e) => setNewProgress(e.target.value)}
+            onChange={(e) => {
+              // Convert value to number and clamp between 0 and 100
+              const num = Number(e.target.value);
+              if (num < 0) setNewProgress(0);
+              else if (num > 100) setNewProgress(100);
+              else setNewProgress(num);
+            }}
+            min="0"
+            max="100"
             required
           />
+
           <div className="progress">
             <div className="progress-text">
               <p>Progress</p>
@@ -86,8 +95,11 @@ const ProgressPage = () => {
             </div>
             <div className="loader-con">
               <div
-                className="loader-per"
-                style={{ width: `${newProgress}%` }}
+                className="loader-bar"
+                style={{
+                  width: `${goal.progress}%`,
+                  backgroundColor: goal.progress < 50 ? "#ff0000cc" : "#339933",
+                }}
               ></div>
             </div>
           </div>

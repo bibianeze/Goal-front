@@ -54,9 +54,18 @@ const NewGoal = () => {
           type="number"
           placeholder="Goal Progress"
           value={progress}
-          onChange={(e) => setProgress(e.target.value)}
+          onChange={(e) => {
+            // Convert value to number and clamp between 0 and 100
+            const num = Number(e.target.value);
+            if (num < 0) setProgress(0);
+            else if (num > 100) setProgress(100);
+            else setProgress(num);
+          }}
+          min="0"
+          max="100"
           required
         />
+
         <button type="submit">Create Goal</button>
       </form>
       <span>
