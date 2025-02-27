@@ -11,7 +11,9 @@ const ProgressPage = () => {
 
   const fetchGoal = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/goals/${id}`);
+      const response = await fetch(
+        `https://goal-back.onrender.com/api/goals/${id}`
+      );
       if (response.ok) {
         const data = await response.json();
         setGoal(data);
@@ -32,7 +34,7 @@ const ProgressPage = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `http://localhost:5000/api/goals/${id}/progress`,
+        `https://goal-back.onrender.com/api/goals/${id}/progress`,
         {
           method: "PATCH",
           headers: {

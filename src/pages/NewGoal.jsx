@@ -14,7 +14,7 @@ const NewGoal = () => {
     const newGoal = { title, description, progress: Number(progress) };
 
     try {
-      const response = await fetch("http://localhost:5000/api/goals", {
+      const response = await fetch("https://goal-back.onrender.com/api/goals", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

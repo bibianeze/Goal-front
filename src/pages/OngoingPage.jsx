@@ -9,7 +9,9 @@ const OngoingPage = () => {
 
   const fetchOngoingGoals = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/goals/ongoing");
+      const response = await fetch(
+        "https://goal-back.onrender.com/api/goals/ongoing"
+      );
       const data = await response.json();
       setGoals(data);
     } catch (error) {
@@ -23,7 +25,7 @@ const OngoingPage = () => {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/goals/${id}`, {
+      await fetch(`https://goal-back.onrender.com/api/goals/${id}`, {
         method: "DELETE",
       });
       fetchOngoingGoals();

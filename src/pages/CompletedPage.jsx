@@ -9,7 +9,9 @@ const CompletedPage = () => {
 
   const fetchCompletedGoals = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/goals/completed");
+      const response = await fetch(
+        "https://goal-back.onrender.com/api/goals/completed"
+      );
       const data = await response.json();
       setGoals(data);
     } catch (error) {
@@ -23,7 +25,7 @@ const CompletedPage = () => {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/goals/${id}`, {
+      await fetch(`https://goal-back.onrender.com/api/goals/${id}`, {
         method: "DELETE",
       });
       fetchCompletedGoals();
